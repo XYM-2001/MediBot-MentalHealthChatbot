@@ -1,0 +1,33 @@
+.nav-button {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .nav-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #80858b; /* Default icon color */
+  }
+  
+  .text {
+    font-size: 0.875rem;
+    color: #80858b; /* Default text color */
+  }
+  
+  .nav-button:hover .icon {
+    color: #ccd6e5; /* Icon color on hover */
+  }
+  
+  .nav-button:hover .text {
+    color: #ccd6e5 ; /* Text color on hover */
+  }
+  
