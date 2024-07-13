@@ -1,9 +1,10 @@
 import React from "react";
 import "/src/styles/Homepage.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <section className="section-container">
+    <section className="section-container1">
       <div className="text-container">
         <h4 className="mb-4.5 text-lg font-medium text-black dark:text-white">
           🔥 MediBot - where convenience meets quality healthcare
@@ -28,13 +29,13 @@ const Header = () => {
               <div>
               </div>   */}
               <button className="rounded-full w-2/3 bg-dark px-9 py-2 text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark dark:hover:bg-blackho">
-                <a
-                  href="/auth/signup"
+                <Link
+                  to="/auth/signup"
                   aria-label="get started button"
-                  className="flex  rounded-full bg-black px-9 py-2 text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark dark:hover:bg-blackho"
+                  className="flex rounded-full bg-black px-9 py-2 text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark dark:hover:bg-blackho"
                 >
                   Get Started
-                </a>
+                </Link>
               </button>
             </div>
           </form>

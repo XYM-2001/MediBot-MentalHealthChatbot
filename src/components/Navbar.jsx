@@ -10,35 +10,35 @@ const Navbar = () => {
           type="button"
           className="nav-button"
         >
-          <FaHome className="icon" />
+          <FaHome className="icon2" />
           <span className="text">Home</span>
         </button>
         <button
           type="button"
           className="nav-button"
         >
-          <FaBook className="icon" />
+          <FaBook className="icon2" />
           <span className="text">Study</span>
         </button>
         <button
           type="button"
           className="nav-button"
         >
-          <FaRobot className="icon" />
+          <FaRobot className="icon2" />
           <span className="text">ChatBot</span>
         </button>
         <button
           type="button"
           className="nav-button"
         >
-          <FaPenNib className="icon" />
+          <FaPenNib className="icon2" />
           <span className="text">Journal</span>
         </button>
         <button
           type="button"
           className="nav-button"
         >
-          <FaUser className="icon" />
+          <FaUser className="icon2" />
           <span className="text">Profile</span>
         </button>
       </div>

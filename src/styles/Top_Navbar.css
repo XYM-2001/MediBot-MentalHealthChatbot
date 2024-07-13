@@ -54,7 +54,7 @@
   /* Hover effect for links */
   .nav-link:hover {
     color: #7369f3; /* Hover color */
-  }
+  } 
 
   /* Responsive adjustments */
   @media (max-width: 768px) {

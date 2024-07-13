@@ -24,42 +24,42 @@ const Features = () => {
       <br/>
       <div className="feature-grid mt-12.5 grid gap-7.5 md:grid-cols-2 lg:grid-cols-3 xl:mt-20 xl:gap-12.5">
         <div className="feature-card">
-          <div className="icon bg-primary">
+          <div className="icon1 bg-primary">
             <FontAwesomeIcon icon={faRobot} />
           </div>
           <h3 className="mb-5 mt-7.5 text-xl font-semibold text-black dark:text-white xl:text-itemtitle">AI Chatbot</h3>
           <p>Engage users with an intelligent conversational agent powered by artificial intelligence, providing instant assistance and answering queries 24/7.</p>
         </div>
         <div className="feature-card">
-          <div className="icon bg-primary">
+          <div className="icon1 bg-primary">
             <FontAwesomeIcon icon={faNotesMedical} />
           </div>
           <h3 className="mb-5 mt-7.5 text-xl font-semibold text-black dark:text-white xl:text-itemtitle">Symptom Analysis</h3>
           <p>Empower users to assess their health conditions by inputting symptoms, receiving accurate analysis, and guidance on potential next steps.</p>
         </div>
         <div className="feature-card">
-          <div className="icon bg-primary">
+          <div className="icon1 bg-primary">
             <FontAwesomeIcon icon={faAppleAlt} />
           </div>
           <h3 className="mb-5 mt-7.5 text-xl font-semibold text-black dark:text-white xl:text-itemtitle">Diet Planner</h3>
           <p>Help users achieve their health and fitness goals with personalized diet plans tailored to their nutritional needs and preferences.</p>
         </div>
         <div className="feature-card">
-          <div className="icon bg-primary">
+          <div className="icon1 bg-primary">
             <FontAwesomeIcon icon={faStethoscope} />
           </div>
           <h3 className="mb-5 mt-7.5 text-xl font-semibold text-black dark:text-white xl:text-itemtitle">Doctor Consultation</h3>
           <p>Connect users with qualified healthcare professionals for virtual consultations, diagnosis, treatment plans, and medical advice from the comfort of their homes.</p>
         </div>
         <div className="feature-card">
-          <div className="icon bg-primary">
+          <div className="icon1 bg-primary">
             <FontAwesomeIcon icon={faShieldAlt} />
           </div>
           <h3 className="mb-5 mt-7.5 text-xl font-semibold text-black dark:text-white xl:text-itemtitle">Data Privacy</h3>
           <p>Ensure the confidentiality and security of users' sensitive health data through robust privacy measures and compliance with data protection regulations.</p>
         </div>
         <div className="feature-card">
-          <div className="icon bg-primary">
+          <div className="icon1 bg-primary">
             <FontAwesomeIcon icon={faUserShield} />
           </div>
           <h3 className="mb-5 mt-7.5 text-xl font-semibold text-black dark:text-white xl:text-itemtitle">Facial Recognition</h3>
