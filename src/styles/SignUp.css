@@ -1,0 +1,9 @@
+.section-container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-left: 80px;
+    margin-top:70px;
+    padding-bottom: 80px;
+  }

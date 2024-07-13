@@ -11,9 +11,9 @@
     transform: scale(1.05);
   }
   
-  .icon {
-    width: 1.25rem;
-    height: 1.25rem;
+  .icon2 {
+    width: 1.2rem;
+    height: 1.2rem;
     margin-bottom: 0.5rem;
     color: #80858b; /* Default icon color */
   }
