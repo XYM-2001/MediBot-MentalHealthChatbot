@@ -9,7 +9,10 @@ import Features from './components/Homepage/Features';
 import Footer from './components/Homepage/Footer';
 import Top_Navbar from './components/Homepage/Top_Navbar';
 import SignUp from './components/SignUp/SignUp';
+import Login from './components/SignUp/Login';
 import Chat from './components/Chat/Chat'; // Ensure to import Chat component
+import About from "./components/Homepage/About";
+import Contact from "./components/Homepage/Contact";
 
 function App() {
   return (
@@ -19,10 +22,10 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/auth/signup' element={<SignUp />} />
-          <Route path='/chat' element={<Chat />} /> {/* Add this route */}
-          {/* <Route path='/about' element={<AboutPage />} /> */}
-          {/* <Route path='/contact' element={<ContactPage />} /> */}
-          {/* Add more routes for other pages */}
+          <Route path='/auth/login' element={<Login />} />
+          <Route path='/chat' element={<Chat />} />
+          <Route path='/about' element={<About />} /> 
+          <Route path='/contact' element={<Contact />} />
         </Routes>
         <ConditionalFooter   />
       </div>
@@ -32,7 +35,7 @@ function App() {
 
 function ConditionalNavbars() {
   const location = useLocation();
-  const topNavbarPaths = ['/', '/auth/signup', '/contact', '/about']; // Add paths for Top_Navbar
+  const topNavbarPaths = ['/', '/auth/login', '/auth/signup', '/contact', '/about']; // Add paths for Top_Navbar
   const navbarPaths = ['/chat']; // Add paths for Navbar
 
   if (topNavbarPaths.includes(location.pathname)) {

@@ -30,7 +30,7 @@ const Header = () => {
               </div>   */}
               <button className="rounded-full w-2/3 bg-dark px-9 py-2 text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark dark:hover:bg-blackho">
                 <Link
-                  to="/auth/signup"
+                  to="/auth/login"
                   aria-label="get started button"
                   className="flex rounded-full bg-black px-9 py-2 text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark dark:hover:bg-blackho"
                 >
