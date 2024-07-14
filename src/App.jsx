@@ -14,6 +14,8 @@ import Chat from './components/Chat/Chat'; // Ensure to import Chat component
 import About from "./components/Homepage/About";
 import Contact from "./components/Homepage/Contact";
 
+import UserProfile from "./components/Profile/UserProfile";
+
 function App() {
   return (
     <Router>
@@ -26,6 +28,7 @@ function App() {
           <Route path='/chat' element={<Chat />} />
           <Route path='/about' element={<About />} /> 
           <Route path='/contact' element={<Contact />} />
+          <Route path='/user/profile' element={<UserProfile />} />
         </Routes>
         <ConditionalFooter   />
       </div>
@@ -36,7 +39,7 @@ function App() {
 function ConditionalNavbars() {
   const location = useLocation();
   const topNavbarPaths = ['/', '/auth/login', '/auth/signup', '/contact', '/about']; // Add paths for Top_Navbar
-  const navbarPaths = ['/chat']; // Add paths for Navbar
+  const navbarPaths = ['/chat','/user/profile']; // Add paths for Navbar
 
   if (topNavbarPaths.includes(location.pathname)) {
     return <Top_Navbar />;

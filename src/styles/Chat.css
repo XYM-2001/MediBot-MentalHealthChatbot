@@ -48,7 +48,7 @@
     word-wrap: break-word; /* Wrap long words */
   }
   
-  .input form {
+  .input form { 
     display: flex;
     align-items: center;
   }
@@ -78,3 +78,41 @@
     background-color: #1e41dd; /* Darker background color on hover */
   }
   
+  .input-with-avatar {
+    display: flex;
+    align-items: flex-end; /* Align input and avatar at the bottom */
+  }
+  
+  .user-profile {
+    margin-right: 10px; /* Space between avatar and input */
+  }
+  
+  .avatar-label {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .default-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+  }
+  .avatar-small {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px; /* Space between avatar and message */
+  }

@@ -4,10 +4,14 @@ import './index.css';
 import 'src/styles/styles.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AvatarProvider } from './components/Context/AvatarContext';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+   <AvatarProvider>
+      <App />
+    </AvatarProvider>
   </React.StrictMode>
 );
 
