@@ -14,7 +14,7 @@ import Contact from "./components/Homepage/Contact";
 import UserProfile from "./components/Profile/UserProfile";
 import Journal from "./components/Journal/Journal";
 import SelfCare from "./components/SelfCare/SelfCare";
-
+import UserHome from "./components/UserHome/UserHome";
 function App() {
   return (
     <Router>
@@ -30,6 +30,7 @@ function App() {
           <Route path='/user/profile' element={<UserProfile />} />
           <Route path='/user/journal' element={<Journal />} />
           <Route path='/user/study' element={<SelfCare />} />
+          <Route path='/user/home' element={<UserHome />} />
         </Routes>
         <ConditionalFooter />
       </div>

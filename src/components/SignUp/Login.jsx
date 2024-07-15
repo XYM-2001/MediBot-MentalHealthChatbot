@@ -1,8 +1,9 @@
-// src/components/SignUp/Login.jsx
+// Login.jsx
+
 import React, { useState } from 'react';
-import { auth } from '../../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import { auth } from '../firebase'; // Adjust the path based on your project structure
 import '../../styles/Login.css';
 
 function Login() {

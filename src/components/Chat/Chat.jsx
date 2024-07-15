@@ -97,28 +97,84 @@
 
 // export default Chat;
 
-import React from "react";
-import "/src/styles/Chat.css"; // Import your custom CSS if needed
+// import React from "react";
+// import "/src/styles/Chat.css"; // Import your custom CSS if needed
 
-function Chat() {
+// function Chat() {
+//   return (
+//     <iframe
+//       title="Dialogflow Messenger"
+//       src="/src/components/Chat/dialogflow-messenger.html"
+//       style={{
+//         border: "none",
+//         position: "fixed",
+//         bottom: "0",
+//         right: "0",
+//         width: "100%",
+//         height: "100%", // Adjust the height as needed
+//         zIndex: "999"
+//       }}
+//     ></iframe>
+//   );
+// }
+
+// export default Chat;
+// 
+import React from 'react';
+
+const Chat = () => {
   return (
-    <iframe
-      title="Dialogflow Messenger"
-      src="/src/components/Chat/dialogflow-messenger.html"
-      style={{
-        border: "none",
-        position: "fixed",
-        bottom: "0",
-        right: "0",
-        width: "100%",
-        height: "100%", // Adjust the height as needed
-        zIndex: "999"
-      }}
-    ></iframe>
+    <div>
+      <iframe
+        srcDoc={`
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Dialogflow Messenger Integration</title>
+            <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+            <style>
+              body, html {
+                height: 100%;
+                width:100%;
+                margin: 0;
+                padding: 0;
+              }
+              df-messenger {
+                z-index: 999;
+                position: fixed;
+                --df-messenger-font-color: #000;
+                --df-messenger-font-family: Google Sans;
+                --df-messenger-chat-background: #f3f6fc;
+                --df-messenger-message-user-background: #d3e3fd;
+                --df-messenger-message-bot-background: #fff;
+                bottom: 0;
+                left: 700px;
+                width: 80vw; /* Full width of the viewport */
+                height: 10vh; /* Full height of the viewport */
+              }
+            </style>
+          </head>
+          <body>
+            <df-messenger
+              project-id="mentalhealthbot-429020"
+              agent-id="7f1802ef-6217-48f8-9044-27b860d1fa3d"
+              language-code="en"
+              max-query-length="-1">
+              <df-messenger-chat-bubble chat-title="mentalhelper"></df-messenger-chat-bubble>
+            </df-messenger>
+            <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+          </body>
+          </html>
+        `}
+        title="Dialogflow Messenger"
+        height="500vh" /* Set height to 80% of viewport height */
+        width="1200vw"
+        style={{ border: 'none', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', borderRadius: '8px' }}
+      />
+    </div>
   );
-}
+};
 
 export default Chat;
-
-
-
