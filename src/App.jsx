@@ -1,19 +1,16 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
-
-// Import your components
+// src/App.jsx
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Header from './components/Homepage/Header';
 import Features from './components/Homepage/Features';
-// import Testimonials from './components/Homepage/Testimonials';
 import Footer from './components/Homepage/Footer';
 import Top_Navbar from './components/Homepage/Top_Navbar';
 import SignUp from './components/SignUp/SignUp';
 import Login from './components/SignUp/Login';
-import Chat from './components/Chat/Chat'; // Ensure to import Chat component
+import Chat from './components/Chat/Chat';
 import About from "./components/Homepage/About";
 import Contact from "./components/Homepage/Contact";
-
 import UserProfile from "./components/Profile/UserProfile";
 
 function App() {
@@ -26,11 +23,11 @@ function App() {
           <Route path='/auth/signup' element={<SignUp />} />
           <Route path='/auth/login' element={<Login />} />
           <Route path='/chat' element={<Chat />} />
-          <Route path='/about' element={<About />} /> 
+          <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/user/profile' element={<UserProfile />} />
         </Routes>
-        <ConditionalFooter   />
+        <ConditionalFooter />
       </div>
     </Router>
   );
@@ -38,8 +35,8 @@ function App() {
 
 function ConditionalNavbars() {
   const location = useLocation();
-  const topNavbarPaths = ['/', '/auth/login', '/auth/signup', '/contact', '/about']; // Add paths for Top_Navbar
-  const navbarPaths = ['/chat','/user/profile']; // Add paths for Navbar
+  const topNavbarPaths = ['/', '/auth/login', '/auth/signup', '/contact', '/about'];
+  const navbarPaths = ['/chat', '/user/profile'];
 
   if (topNavbarPaths.includes(location.pathname)) {
     return <Top_Navbar />;
@@ -47,22 +44,23 @@ function ConditionalNavbars() {
     return <Navbar />;
   }
   
-  return null; // Return null if no navbar should be displayed
+  return null;
 }
 
 function ConditionalFooter() {
   const location = useLocation();
-  const footerPaths = ['/', '/auth/signup', '/contact', '/about']; // Add paths for Top_Navbar
-  const noFooterPaths = ['/chat']; // Add paths for Navbar
+  const footerPaths = ['/', '/auth/signup', '/contact', '/about'];
+  const noFooterPaths = ['/chat'];
 
   if (footerPaths.includes(location.pathname)) {
     return <Footer />;
   } else if (noFooterPaths.includes(location.pathname)) {
-    return ;
+    return null;
   }
   
-  return null; // Return null if no navbar should be displayed
+  return null;
 }
+
 function HomePage() {
   return (
     <main>

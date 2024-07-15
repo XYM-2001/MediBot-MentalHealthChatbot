@@ -9,7 +9,7 @@ import { AvatarProvider } from './components/Context/AvatarContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-   <AvatarProvider>
+    <AvatarProvider>
       <App />
     </AvatarProvider>
   </React.StrictMode>
