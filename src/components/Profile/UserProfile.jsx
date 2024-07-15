@@ -1,42 +1,49 @@
-// UserProfile.jsx
+import React, { useState } from 'react';
+import '/src/styles/Profile.css'; // Ensure this path matches your project structure
 
-import React, { useState } from "react";
-import "/src/styles/UserProfile.css";
-function UserProfile({ onAvatarSelect }) {
-  const [avatar, setAvatar] = useState(null); // State to store selected/uploaded avatar
+const UserProfile = () => {
+  const [userPhoto, setUserPhoto] = useState(null);
 
-  const handleAvatarChange = (e) => {
-    const file = e.target.files[0];
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      setUserPhoto(reader.result);
+    };
+
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setAvatar(reader.result); // Store avatar as base64 URL
-        onAvatarSelect(reader.result); // Pass avatar URL to parent component
-      };
       reader.readAsDataURL(file);
     }
   };
 
   return (
-    <div className="user-profile">
-      <label htmlFor="avatar-input" className="avatar-label">
-        {avatar ? (
-          <img src={avatar} alt="Selected Avatar" className="avatar-preview" />
-        ) : (
-          <div className="avatar-placeholder">
-            <span>Select an Avatar</span>
+    <div className="profile-container">
+      <div className="profile-header">
+        <h1>User Profile</h1>
+      </div>
+
+      <div className="profile-content">
+        <div className="user-photo-section">
+          <img src={userPhoto || 'water drop.jpg'} alt="User" className="user-photo" />
+          <label htmlFor="file-upload" className="custom-file-upload">
+            <input id="file-upload" type="file" accept="image/*" onChange={handleFileUpload} />
+            Upload Photo
+          </label>
+        </div>
+
+        <div className="user-details-section">
+          <h2>User Details</h2>
+          <div className="user-details">
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Email:</strong> john.doe@example.com</p>
+            <p><strong>Location:</strong> City, Country</p>
+            {/* Add more details as needed */}
           </div>
-        )}
-      </label>
-      <input
-        type="file"
-        accept="image/*"
-        onChange={handleAvatarChange}
-        style={{ display: "none" }}
-        id="avatar-input"
-      />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default UserProfile;
