@@ -5,7 +5,7 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDG95JiKJ9sJTxte3mkJ3ktuTWlXSF5OHQ",
+    apiKey: import.meta.env.VITE_GOOGLE_API_KEY,
     authDomain: "mentalhealthbot-429020.firebaseapp.com",
     projectId: "mentalhealthbot-429020",
     storageBucket: "mentalhealthbot-429020.appspot.com",
