@@ -15,6 +15,8 @@ import About from "./components/Homepage/About";
 import Contact from "./components/Homepage/Contact";
 
 import UserProfile from "./components/Profile/UserProfile";
+import Journal from "./components/Journal/Journal";
+import SelfCare from "./components/SelfCare/SelfCare";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path='/about' element={<About />} /> 
           <Route path='/contact' element={<Contact />} />
           <Route path='/user/profile' element={<UserProfile />} />
+          <Route path='/user/journal' element={<Journal />} />
+          <Route path='/user/study' element={<SelfCare />} />
         </Routes>
         <ConditionalFooter   />
       </div>
@@ -39,7 +43,7 @@ function App() {
 function ConditionalNavbars() {
   const location = useLocation();
   const topNavbarPaths = ['/', '/auth/login', '/auth/signup', '/contact', '/about']; // Add paths for Top_Navbar
-  const navbarPaths = ['/chat','/user/profile']; // Add paths for Navbar
+  const navbarPaths = ['/chat','/user/profile','/user/study','/user/journal','/user/home']; // Add paths for Navbar
 
   if (topNavbarPaths.includes(location.pathname)) {
     return <Top_Navbar />;
