@@ -1,122 +1,57 @@
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import axios from "axios";
-import "/src/styles/Login.css";
-
+// src/components/SignUp/Login.jsx
+import React, { useState } from 'react';
+import { auth } from '../../firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import '../../styles/Login.css';
 
 function Login() {
-  const handleSignUpClick = () => {
-    window.location.href = "/auth/signup";
-  };
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const [submitting, setSubmitting] = useState(false);
-  const [formError, setFormError] = useState(null);
-
-  const onSubmit = async (data) => {
-    setSubmitting(true);
+  const handleLogin = async (e) => {
+    e.preventDefault();
     try {
-      // Replace 'YOUR_API_ENDPOINT' with your actual endpoint
-      const response = await axios.post("YOUR_API_ENDPOINT", data);
-      console.log(response.data);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      if (userCredential.user.emailVerified) {
+        navigate('/chat');
+      } else {
+        setMessage('Please verify your email address before logging in.');
+        auth.signOut();
+      }
     } catch (error) {
-      setFormError("Invalid credentials. Please try again.");
-    } finally {
-      setSubmitting(false);
+      setError(error.message);
     }
   };
 
   return (
-    <div className="section-container3">
-        <style>
-        {`
-          body {
-            background: linear-gradient(-45deg,#F0FFFF, #ADD8E6, #0000FF, #F0FFFF);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            height: 100vh;
-          }
-
-          @keyframes gradient {
-            0% {
-              background-position: 0% 50%;
-            }
-            50% {
-              background-position: 100% 50%;
-            }
-            100% {
-              background-position: 0% 50%;
-            }
-          }
-        `}
-      </style>
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-300 to-green-600">
-      <div className="w-full max-w-md mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-        <div className="px-6 py-8">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">
-            Log On to Your Personal MediBot!
-          </h2>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="mb-4">
-              <label
-                htmlFor="email"
-                className="block text-gray-700 text-sm font-bold mb-2"
-              >
-                Email Address
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="text"
-                {...register("email", { required: true })}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500"
-                placeholder="Enter your email address"
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                htmlFor="password"
-                className="block text-gray-700 text-sm font-bold mb-2"
-              >
-                Password
-              </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                {...register("password", { required: true })}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500"
-                placeholder="Enter your password"
-              />
-            </div>
-            <div className="text-center">
-              <button
-                type="submit"
-                className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              >
-                {submitting ? "Logging in..." : "Login"}
-              </button>
-            </div>
-          </form>
-          {formError && (
-            <p className="text-red-500 text-center mt-4">{formError}</p>
-          )}
-          <p className="text-sm text-center mt-4">
-            Don't have an account?{" "}
-            <span
-              className="text-blue-500 cursor-pointer"
-              onClick={handleSignUpClick}
-            >
-              Register here!
-            </span>
-          </p>
-        </div>
-      </div>
-    </div>
+    <div className="login-container">
+      <h2>Login</h2>
+      {error && <p className="error-message">{error}</p>}
+      {message && <p className="info-message">{message}</p>}
+      <form onSubmit={handleLogin}>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+      <p>
+        Don't have an account? <a href="/auth/signup">Sign Up</a>
+      </p>
     </div>
   );
 }

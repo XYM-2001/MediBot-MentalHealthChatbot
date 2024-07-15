@@ -1,11 +1,9 @@
 import React from "react";
-// import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "/src/styles/Top_Navbar.css";
 
-
-function Header()
-{const navItems = [
+function Header() {
+  const navItems = [
     {
       name: "Home",
       slug: "/",
@@ -20,7 +18,7 @@ function Header()
     },
     {
       name: "Login",
-      slug: "/login",
+      slug: "/auth/login", // Adjusted slug for Login page
     },
   ];
 
@@ -40,7 +38,6 @@ function Header()
           ))}
         </div>
       </div>
-    
     </header>
   );
 }
