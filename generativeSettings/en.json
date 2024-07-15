@@ -1,0 +1,37 @@
+{
+  "fallbackSettings": {
+    "selectedPrompt": "Default"
+  },
+  "generativeSafetySettings": {
+    "raiSettings": {
+      "categoryFilters": [ {
+        "category": "HATE_SPEECH",
+        "filterLevel": "BLOCK_SOME"
+      }, {
+        "category": "DANGEROUS_CONTENT",
+        "filterLevel": "BLOCK_SOME"
+      }, {
+        "category": "SEXUALLY_EXPLICIT_CONTENT",
+        "filterLevel": "BLOCK_SOME"
+      }, {
+        "category": "HARASSMENT",
+        "filterLevel": "BLOCK_SOME"
+      } ]
+    }
+  },
+  "languageCode": "en",
+  "knowledgeConnectorSettings": {
+    "business": "Taskformer",
+    "mainLlmConfig": {
+    
+    }
+  },
+  "llmModelSettings": {
+    "model": "gemini-1.5-flash",
+    "parameters": {
+      "temperature": 0,
+      "inputTokenLimit": "INPUT_TOKEN_LIMIT_UNSPECIFIED",
+      "outputTokenLimit": "OUTPUT_TOKEN_LIMIT_UNSPECIFIED"
+    }
+  }
+}
