@@ -1,0 +1,137 @@
+.video-container {
+    position: relative;
+    height: 520px;
+    overflow: hidden; /* Ensure video doesn't overflow the container */
+    border-radius:1% ;
+  }
+
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Ensure the text overlay is on top of the video */
+    color: rgb(5, 22, 81); /* Adjust text color as needed */
+    text-align: center; /* Center the text */
+    transition: 0.5s ease-out;
+  }
+
+  .overlay-text-field {
+    font-size: 4em; /* Adjust font size as needed */
+    padding: 10px; /* Optional: Add padding for better appearance */
+    border-radius: 5px; /* Optional: Add border radius */
+  }
+
+
+h1 span {
+    transition: 0.5s ease-out;
+  }
+  h1:hover span:nth-child() {
+    margin-right: 5px;
+  }
+  h1:hover span:nth-child():after {
+    content: "'";
+  }
+  h1:hover span:nth-child() {
+    margin-left: 30px;
+  }
+  h1:hover span {
+    color: #423582;
+    text-shadow: 0 0 1px #84bec3, 0 0 3px #84bec3, 0 0 5px #84bec3; /* Reduced glow effect */
+  }
+
+  .login {
+    border-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+  .loginForm {
+      margin-top: 30px !important;
+  }
+
+  /* signup button */
+  .signup-button {
+    z-index: 400; /* Adjust z-index as needed */
+    border: 3px solid #007bff;; /* Remove border or set border properties */
+    margin-top: 20px;
+    border-radius:20%;
+    border-color: rgb(113, 133, 157);
+    padding: 10px ; /* Adjust padding for a more reasonable size */
+    background-color: #4512ad; /* Example background color */
+    color: white; /* Text color */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    /* Add more styles as needed */
+  }
+.image-bg{
+    width: 100%;
+}
+
+/* --------------------------------------- */
+/* Homepage.css */
+.section-container1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px;
+  padding-left: 80px;
+  padding-bottom: 20px;
+}
+
+.text-container,
+.image-container {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .text-container,
+  .image-container {
+    width: 50%;
+  }
+}
+
+.text-container {
+  padding-right: 16px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center image vertically */
+  margin-top: -50px; 
+}
+
+
+.image-container img {
+  max-width: 70%; /* Ensures the image scales responsively */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 10px; /* Adds rounded corners to the image */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* Adds a subtle shadow */
+}
+.image-container img:hover {
+  transform: scale(1.03); /* Scale up the image on hover */
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: auto; /* Adjust width as needed */
+  display: inline-block;
+  padding: 0; /* Remove default padding */
+}
+
+button a {
+  display: block;
+  padding: 0.75rem 1.5rem; /* Adjust padding as needed */
+  text-decoration: none;
+  color: white;
+}
+button a:hover {
+  text-decoration: none; /* Remove underline on hover */
+}
+
+
