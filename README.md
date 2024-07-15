@@ -70,6 +70,3 @@ yarn dev
 http://localhost:5173
 ```
 
-## Liscense
-
-This project is licensed under the MIT License. See the LICENSE file for details.
